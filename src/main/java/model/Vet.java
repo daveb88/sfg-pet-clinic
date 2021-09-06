@@ -1,2 +1,5 @@
-package model;public class Vet {
+package model;
+
+public class Vet extends Person{
+
 }
