@@ -35,9 +35,7 @@ public class OwnerSDJpaService implements OwnerService {
     @Override
     public Set<Owner> findAll() {
         Set<Owner> owners = new HashSet<>();
-
         ownerRepository.findAll().forEach(owners::add);
-
         return owners;
     }
 
@@ -47,9 +45,7 @@ public class OwnerSDJpaService implements OwnerService {
     }
 
     @Override
-    public Owner save(Owner object) {
-        return ownerRepository.save(object);
-    }
+    public Owner save(Owner object) { return ownerRepository.save(object); }
 
     @Override
     public void delete(Owner object) {
