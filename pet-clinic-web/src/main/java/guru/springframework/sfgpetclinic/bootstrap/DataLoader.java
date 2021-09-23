@@ -2,11 +2,13 @@ package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
+@Slf4j
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -42,7 +44,7 @@ public class DataLoader implements CommandLineRunner {
         cat.setName("Cat");
         PetType savedCatPetType = petTypeService.save(cat);
 
-        System.out.println("Loaded Pet Types....");
+        log.info("=====>Loaded Pet Types....");
 
         Speciality radiology = new Speciality();
         radiology.setDescription("Radiology");
@@ -56,7 +58,7 @@ public class DataLoader implements CommandLineRunner {
         dentistry.setDescription("Dentistry");
         Speciality savedDentistry = specialityService.save(dentistry);
 
-        System.out.println("Loaded Specialities....");
+        log.info("=====>Loaded Specialities....");
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
@@ -89,7 +91,7 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
-        System.out.println("Loaded Owners and Pets....");
+        log.info("=====>Loaded Owners and Pets....");
 
         Visit catVisit = new Visit();
         catVisit.setPet(fionasCat);
@@ -100,7 +102,7 @@ public class DataLoader implements CommandLineRunner {
 
         visitService.save(catVisit);
 
-        System.out.println("Loaded Visits....");
+        log.info("=====>Loaded Visits....");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
@@ -116,6 +118,6 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
-        System.out.println("Loaded Vets....");
+        log.info("=====>Loaded Vets....");
     }
 }
