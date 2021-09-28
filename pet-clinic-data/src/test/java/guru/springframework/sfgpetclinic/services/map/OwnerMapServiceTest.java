@@ -39,7 +39,6 @@ class OwnerMapServiceTest {
         assertNull(smith);
     }
 
-
     @Test
     void findById() {
         Set<Owner> ownerSet = ownerMapService.findAll();
